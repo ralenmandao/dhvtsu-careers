@@ -10,7 +10,9 @@ public class Candidate extends User{
 	@NotNull
 	private String last_name;
 	
-	public Candidate(){}
+	public Candidate(){
+		System.out.println("Im instantiated");
+	}
 	
 
 	public Candidate(String first_name, String last_name) {
@@ -25,7 +27,7 @@ public class Candidate extends User{
 	}
 
 	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+		this.first_name = first_name.toLowerCase();
 	}
 
 	public String getLast_name() {
@@ -33,7 +35,7 @@ public class Candidate extends User{
 	}
 
 	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+		this.last_name = last_name.toLowerCase();
 	}
 
 	public long getCandidate_id() {

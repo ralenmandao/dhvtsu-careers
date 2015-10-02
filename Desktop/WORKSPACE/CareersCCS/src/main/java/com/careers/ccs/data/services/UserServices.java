@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.careers.ccs.data.dao.UserDAO;
 import com.careers.ccs.data.entities.User;
 
-public class UserServices {
+public class UserServices implements Services{
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserServices.class);
 	

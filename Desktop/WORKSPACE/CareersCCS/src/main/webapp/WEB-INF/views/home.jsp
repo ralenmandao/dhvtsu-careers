@@ -5,13 +5,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from 188.226.173.21/html/careers/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2015 12:52:25 GMT -->
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Homepage - Careers</title>
+	<title>Homepage - CSS Careers</title>
 
 	<!-- Stylesheets -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
@@ -39,7 +38,7 @@
 					<a href="#" class="btn btn-link">Register</a>
 					<div>
 						<!-- REGISTER -->
-						<spring:url value="/register/candidate/validate" var="registerForm"/>
+						<spring:url value="/register/candidate/" var="registerForm"/>
 						<form:form action="${registerForm}" method="POST" modelAttribute="candidate">
 							<form:errors path="first_name" cssClass="error-message" />
 							<form:input path = "first_name" type = "text" cssClass="form-control" cssErrorClass="form-control error" placeholder="First Name" />
@@ -209,7 +208,7 @@
 								<label class="col-md-3">Location</label>
 
 								<div class="col-md-9">
-									<input type="text" class="form-control" placeholder="Switzerland">
+									<input type="text" class="form-control" placeholder="Clark Free Port">
 								</div>
 							</div>
 
@@ -241,11 +240,11 @@
 							<div class="counter-container">
 								<ul class="counter clearfix">
 									<li class="zero">0</li>
-									<li>3</li>
-									<li>5</li>
-									<li>1</li>
-									<li>0</li>
-									<li>9</li>
+									<li class="zero">0</li>
+									<li class="zero">0</li>
+									<li class="zero">0</li>
+									<li class="zero">0</li>
+									<li class="zero">0</li>
 								</ul>
 
 								<div><span>Jobs</span></div>
@@ -292,18 +291,18 @@
 								<div class="row p30">
 									<div class="col-sm-6">
 										<ul class="filter-list">
-											<li><a href="#">Asia <span>(1234)</span></a></li>
-											<li><a href="#">Africa <span>(5678)</span></a></li>
-											<li><a href="#">Europe <span>(910)</span></a></li>
-											<li><a href="#">North America <span>(347)</span></a></li>
+											<li><a href="#">ARMM <span>(1234)</span></a></li>
+											<li><a href="#">Region I <span>(5678)</span></a></li>
+											<li><a href="#">Region II <span>(910)</span></a></li>
+											<li><a href="#">Region III <span>(347)</span></a></li>
 										</ul>
 									</div>
 
 									<div class="col-sm-6">
 										<ul class="filter-list">
-											<li><a href="#">Central America <span>(52)</span></a></li>
-											<li><a href="#">South America <span>(117)</span></a></li>
-											<li><a href="#">Oceania <span>(736)</span></a></li>
+											<li><a href="#">Region IV-A <span>(52)</span></a></li>
+											<li><a href="#">Region IV-B <span>(117)</span></a></li>
+											<li><a href="#">Region V <span>(736)</span></a></li>
 										</ul>
 									</div>
 								</div>
@@ -488,8 +487,8 @@
 									</div>
 
 									<div class="content">
-										<h6>Front-End Developer at Envato</h6>
-										<span class="location">Sydney, Australia</span>
+										<h6>Front-End Developer at Twist</h6>
+										<span class="location">Clark Free Port</span>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, hic corrupti nobis consequuntur nam praesentium dolorem quo accusamus laborum ab. <a href="#" class="read-more">Read More</a></p>
 									</div>
 								</li>
@@ -594,63 +593,6 @@
 							</li>
 						</ul>
 					</div> <!-- end .our-partners-section -->
-
-					<div class="title-lines">
-						<h3>Our Prices</h3>
-					</div>
-
-					<div class="pricing-tables tables-3">
-						<div class="pricing-tables-column">
-							<div class="white-container">
-								<h5 class="title">Bronze</h5>
-
-								<span class="price">$ 15</span>
-
-								<ul class="features">
-									<li>1 Job Ad</li>
-									<li>30 Days</li>
-									<li>Standard Positioning</li>
-									<li>1 Lorem Ipsum</li>
-								</ul>
-
-								<a href="#" class="btn btn-default">Choose</a>
-							</div>
-						</div>
-
-						<div class="pricing-tables-column">
-							<div class="white-container">
-								<h5 class="title">Silver</h5>
-
-								<span class="price">$ 49</span>
-
-								<ul class="features">
-									<li>5 Job Ad</li>
-									<li>45 Days</li>
-									<li>Extended Positioning</li>
-									<li>5 Lorem Ipsum</li>
-								</ul>
-
-								<a href="#" class="btn btn-default">Choose</a>
-							</div>
-						</div>
-
-						<div class="pricing-tables-column">
-							<div class="white-container">
-								<h5 class="title">Gold</h5>
-
-								<span class="price">$ 99</span>
-
-								<ul class="features">
-									<li>10 Job Ad</li>
-									<li>60 Days</li>
-									<li>Extra Positioning</li>
-									<li>5 Lorem Ipsum</li>
-								</ul>
-
-								<a href="#" class="btn btn-default">Choose</a>
-							</div>
-						</div>
-					</div> <!-- end .pricing-tables -->
 				</div> <!-- end .page-content -->
 
 				<div class="col-sm-4 page-sidebar">
@@ -681,10 +623,6 @@
 									</div>
 								</div>
 							</div>
-						</div>
-
-						<div class="widget sidebar-widget text-center">
-							<a href="#"><img src="<spring:url value="/resources/img/content/sidebar-ad.png" />" alt=""></a>
 						</div>
 
 						<div class="white-container">
@@ -842,7 +780,7 @@
 				<div class="col-sm-3 col-md-4">
 					<div class="widget">
 						<div class="widget-content">
-							<img class="logo" src="<spring:url value="/resources/img/header-logo.png" />" alt="">
+							<img class="logo" src="${logoImg}" alt="">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, sunt illum dolore dolor vel perferendis nisi sequi laudantium porro blanditiis!</p>
 						</div>
 					</div>
@@ -910,7 +848,7 @@
 
 		<div class="copyright">
 			<div class="container">
-				<p>&copy; Copyright 2014 <a href="#">Careers</a> | All Rights Reserved | Powered by <a href="#">UOU Apps</a></p>
+				<p>&copy; Copyright 2015 <a href="#">Careers CCS</a> | All Rights Reserved | Powered by <a href="#">PDK</a></p>
 
 				<ul class="footer-social">
 					<li><a href="#" class="fa fa-facebook"></a></li>
@@ -940,6 +878,4 @@
 <script src="<spring:url value="/resources/js/my_script.js"/>"></script>
 
 </body>
-
-<!-- Mirrored from 188.226.173.21/html/careers/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2015 12:54:30 GMT -->
 </html>

@@ -19,4 +19,16 @@ $(document).ready(function(){
 	if($(".error-message").html() != undefined){
 		$(".header-register").addClass("active");
 	}
+	
+	$("#upload-resume").change(function() {
+	    if(this.checked) {
+	        alert("aw");
+	    }
+	});
+	
+	$("#create-resume").change(function() {
+	    if(this.checked) {
+	    	alert("aw");
+	    }
+	});
 });

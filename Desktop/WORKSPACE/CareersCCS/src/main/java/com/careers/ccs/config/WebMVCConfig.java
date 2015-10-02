@@ -16,8 +16,10 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import com.careers.ccs.data.dao.CandidateDAO;
+import com.careers.ccs.data.dao.CountryDAO;
 import com.careers.ccs.data.dao.UserDAO;
 import com.careers.ccs.data.dao.imp.CandidateDAOImp;
+import com.careers.ccs.data.dao.imp.CountryDAOImp;
 import com.careers.ccs.data.dao.imp.UserDAOImp;
 import com.careers.ccs.data.services.CandidateServices;
 import com.careers.ccs.data.services.UserServices;
@@ -89,6 +91,11 @@ public class WebMVCConfig extends WebMvcAutoConfigurationAdapter{
 	@Bean
 	public CandidateDAO getCandidateDAO(){
 		return new CandidateDAOImp();
+	}
+	
+	@Bean
+	public CountryDAO getCountryDAO(){
+		return new CountryDAOImp();
 	}
 }
 

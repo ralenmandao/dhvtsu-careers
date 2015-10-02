@@ -2,12 +2,14 @@ package com.careers.ccs.controllers;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -39,32 +41,32 @@ public class RegisterController {
 	@Autowired
 	private CandidateServices candidateServices;
 	
-	@RequestMapping(value = "/candidate", method = RequestMethod.GET)
-	public String showCandidate(Locale locale, Model model, HttpSession session) {
-		Candidate candidate = (Candidate) session.getAttribute("candidate");
-		
-		candidate.setFirst_name(candidate.getFirst_name().toLowerCase());
-		candidate.setLast_name(candidate.getLast_name().toLowerCase());
+	@RequestMapping(value = "/candidate", method = RequestMethod.POST)
+	public String showCandidate(Locale locale, Model model, HttpSession session, 
+			@Valid @ModelAttribute Candidate candidate, Errors error) {
+		logger.info("Checking for Errors");
+		if(error.hasErrors()){
+			logger.error("Found an error");
+			return "home";
+		}
+		logger.info("No errors found");
 		
 		long id = userServices.addUser(candidate);
 		candidate.setUser_id(id);
 		long canId = candidateServices.addCandidate(candidate);
 		candidate.setCandidate_id(canId);
 		
+//		Candidate candidate = new Candidate();
+//		candidate.setEmail("ralencc@yahoo.com");
+//		candidate.setFirst_name("Ralen");
+//		candidate.setLast_name("Mandap");
+//		candidate.setPassword("jujukiki");
+		
 		model.addAttribute("candidate", candidate);
+		
 		return "register";
 	}
 	
-	@RequestMapping(value = "/candidate/validate", method = RequestMethod.POST)
-	public String registerCandidate(Locale locale, Model model, 
-			@Valid @ModelAttribute Candidate candidate, Errors error, 
-			HttpSession session) {
-		if(error.hasErrors()){
-			return "home";
-		}
-		session.setAttribute("candidate", candidate);
-		return "redirect:/register/candidate";
-	}
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder){

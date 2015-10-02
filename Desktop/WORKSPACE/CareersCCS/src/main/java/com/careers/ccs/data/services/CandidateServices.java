@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.careers.ccs.data.dao.CandidateDAO;
 import com.careers.ccs.data.entities.Candidate;
 
-public class CandidateServices {
+public class CandidateServices implements Services{
 	
 	@Autowired
 	private CandidateDAO candidateDAO;
